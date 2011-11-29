@@ -146,6 +146,13 @@ public class HomeHandleImplIIOP implements HomeHandle {
         try {
             return (ORB) new InitialContext().lookup("java:comp/ORB");
         } catch (NamingException e) {
+            //if our first attempt fails we attempt with a non standard lookup that
+            //should be availble from any context, as long as we are on JBoss
+            try {
+                return (ORB) new InitialContext().lookup("java:jboss/ORB");
+            } catch (NamingException e1) {
+
+            }
             throw new RuntimeException(e);
         }
     }

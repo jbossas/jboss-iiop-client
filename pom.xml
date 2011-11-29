@@ -43,6 +43,12 @@
         <version.org.jboss.spec.javax.ejb>1.0.0.Final</version.org.jboss.spec.javax.ejb>
     </properties>
 
+    <developers>
+        <developer>
+            <name>Stuart Douglas</name>
+        </developer>
+    </developers>
+
     <build>
     </build>
 

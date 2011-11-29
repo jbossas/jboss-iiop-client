@@ -1,29 +1,41 @@
 package org.jboss.ejb.iiop;
 
+import java.io.Serializable;
+import java.rmi.RemoteException;
+
 import javax.ejb.EJBHome;
 import javax.ejb.EJBMetaData;
+import javax.ejb.HomeHandle;
 
 /**
  *The {@link EJBMetaData} implementation used in remote IIOP invocations.
  *
  * @author Stuart Douglas
  */
-public class EJBMetaDataIIOP implements EJBMetaData {
+public class EJBMetaDataImplIIOP implements EJBMetaData, Serializable {
 
-    private final Class remoteClass;
+    private static final long serialVersionUID = 34627983207130L;
 
-    private final Class homeClass;
+    private Class remoteClass;
 
-    private final Class pkClass;
+    private Class homeClass;
 
-    private final boolean session;
+    private Class pkClass;
 
-    private final boolean statelessSession;
+    private boolean session;
 
-    private final EJBHome home;
+    private boolean statelessSession;
 
-    public EJBMetaDataIIOP(final Class remoteClass, final Class homeClass, final Class pkClass, final boolean session,
-                           final boolean statelessSession, final EJBHome home) {
+    private HomeHandle home;
+
+    /**
+     * no-arg ctor for serialization
+     */
+    public EJBMetaDataImplIIOP() {
+    }
+
+    public EJBMetaDataImplIIOP(final Class remoteClass, final Class homeClass, final Class pkClass, final boolean session,
+                               final boolean statelessSession, final HomeHandle home) {
         this.remoteClass = remoteClass;
         this.homeClass = homeClass;
         this.pkClass = pkClass;
@@ -37,7 +49,11 @@ public class EJBMetaDataIIOP implements EJBMetaData {
      * Obtains the home interface of the enterprise Bean.
      */
     public EJBHome getEJBHome() {
-        return home;
+        try {
+            return home.getEJBHome();
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
