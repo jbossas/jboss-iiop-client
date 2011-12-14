@@ -16,23 +16,17 @@ public class EJBMetaDataImplIIOP implements EJBMetaData, Serializable {
 
     private static final long serialVersionUID = 34627983207130L;
 
-    private Class remoteClass;
+    private final Class remoteClass;
 
-    private Class homeClass;
+    private final Class homeClass;
 
-    private Class pkClass;
+    private final Class pkClass;
 
-    private boolean session;
+    private final boolean session;
 
-    private boolean statelessSession;
+    private final boolean statelessSession;
 
-    private HomeHandle home;
-
-    /**
-     * no-arg ctor for serialization
-     */
-    public EJBMetaDataImplIIOP() {
-    }
+    private final HomeHandle home;
 
     public EJBMetaDataImplIIOP(final Class remoteClass, final Class homeClass, final Class pkClass, final boolean session,
                                final boolean statelessSession, final HomeHandle home) {
@@ -98,5 +92,33 @@ public class EJBMetaDataImplIIOP implements EJBMetaData, Serializable {
      */
     public boolean isStatelessSession() {
         return statelessSession;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        EJBMetaDataImplIIOP that = (EJBMetaDataImplIIOP) o;
+
+        if (session != that.session) return false;
+        if (statelessSession != that.statelessSession) return false;
+        if (home != null ? !home.equals(that.home) : that.home != null) return false;
+        if (homeClass != null ? !homeClass.equals(that.homeClass) : that.homeClass != null) return false;
+        if (pkClass != null ? !pkClass.equals(that.pkClass) : that.pkClass != null) return false;
+        if (remoteClass != null ? !remoteClass.equals(that.remoteClass) : that.remoteClass != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = remoteClass != null ? remoteClass.hashCode() : 0;
+        result = 31 * result + (homeClass != null ? homeClass.hashCode() : 0);
+        result = 31 * result + (pkClass != null ? pkClass.hashCode() : 0);
+        result = 31 * result + (session ? 1 : 0);
+        result = 31 * result + (statelessSession ? 1 : 0);
+        result = 31 * result + (home != null ? home.hashCode() : 0);
+        return result;
     }
 }

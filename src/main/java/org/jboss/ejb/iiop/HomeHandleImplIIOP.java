@@ -156,4 +156,21 @@ public class HomeHandleImplIIOP implements HomeHandle {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        HomeHandleImplIIOP that = (HomeHandleImplIIOP) o;
+
+        if (ior != null ? !ior.equals(that.ior) : that.ior != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return ior != null ? ior.hashCode() : 0;
+    }
 }
