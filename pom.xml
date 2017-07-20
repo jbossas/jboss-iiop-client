@@ -39,6 +39,14 @@
     <description>Client library for EJB applications working against JBoss AS
     using the IIOP protocol</description>
 
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>http://repository.jboss.org/licenses/apache-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <properties>
         <version.org.jboss.spec.javax.ejb>1.0.0.Final</version.org.jboss.spec.javax.ejb>
     </properties>
