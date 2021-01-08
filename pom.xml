@@ -49,6 +49,7 @@
 
     <properties>
         <version.org.jboss.spec.javax.ejb>1.0.0.Final</version.org.jboss.spec.javax.ejb>
+        <version.junit>4.13.1</version.junit>
     </properties>
 
     <developers>
@@ -73,7 +74,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.2</version>
+	    <version>${version.junit}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
