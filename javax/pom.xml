@@ -29,12 +29,12 @@
     <parent>
         <groupId>org.jboss</groupId>
         <artifactId>jboss-iiop-client-parent</artifactId>
-        <version>1.0.2.Final-SNAPSHOT</version>
+        <version>1.0.3.Final-SNAPSHOT</version>
     </parent>
 
     <groupId>org.jboss</groupId>
     <artifactId>jboss-iiop-client</artifactId>
-    <version>1.0.2.Final-SNAPSHOT</version>
+    <version>1.0.3.Final-SNAPSHOT</version>
 
     <name>JBoss IIOP Client</name>
 
