@@ -34,7 +34,7 @@
 
     <groupId>org.jboss</groupId>
     <artifactId>jboss-iiop-client-parent</artifactId>
-    <version>1.0.2.Final-SNAPSHOT</version>
+    <version>1.0.2.Final</version>
     <packaging>pom</packaging>
 
     <name>JBoss IIOP Client: Parent Aggregator</name>
