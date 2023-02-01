@@ -41,7 +41,7 @@
     <description>Client library for EJB applications working against JBoss AS using the IIOP protocol</description>
 
     <properties>
-        <version.org.jboss.openjdk-orb>8.1.9.Final</version.org.jboss.openjdk-orb>
+        <version.org.jboss.openjdk-orb>8.1.10.Final</version.org.jboss.openjdk-orb>
         <version.org.jboss.spec.javax.ejb>2.0.0.Final</version.org.jboss.spec.javax.ejb>
         <version.junit>4.13.1</version.junit>
     </properties>
