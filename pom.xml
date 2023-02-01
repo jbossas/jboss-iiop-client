@@ -33,22 +33,18 @@
     </parent>
 
     <groupId>org.jboss</groupId>
-    <artifactId>jboss-iiop-client-parent</artifactId>
+    <artifactId>jboss-iiop-client</artifactId>
     <version>1.0.3.Final-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>JBoss IIOP Client: Parent Aggregator</name>
+    <name>JBoss IIOP Client</name>
     <description>Client library for EJB applications working against JBoss AS using the IIOP protocol</description>
 
     <properties>
-        <version.junit>4.13.1</version.junit>
         <version.org.jboss.openjdk-orb>8.1.9.Final</version.org.jboss.openjdk-orb>
+        <version.org.jboss.spec.javax.ejb>2.0.0.Final</version.org.jboss.spec.javax.ejb>
+        <version.junit>4.13.1</version.junit>
     </properties>
-
-    <modules>
-        <module>javax</module>
-        <module>jakarta</module>
-    </modules>
 
     <licenses>
         <license>
@@ -73,4 +69,28 @@
         <developerConnection>scm:git:git@github.com:jbossas/jboss-iiop-client.git</developerConnection>
         <url>https://github.com/jbossas/jboss-iiop-client</url>
     </scm>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.jboss.openjdk-orb</groupId>
+            <artifactId>openjdk-orb</artifactId>
+            <version>${version.org.jboss.openjdk-orb}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.spec.javax.ejb</groupId>
+            <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+            <version>${version.org.jboss.spec.javax.ejb}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${version.junit}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
 </project>
