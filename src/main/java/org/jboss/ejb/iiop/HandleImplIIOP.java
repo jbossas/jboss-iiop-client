@@ -24,9 +24,9 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 
-import javax.ejb.EJBObject;
-import javax.ejb.Handle;
-import javax.ejb.spi.HandleDelegate;
+import jakarta.ejb.EJBObject;
+import jakarta.ejb.Handle;
+import jakarta.ejb.spi.HandleDelegate;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.rmi.CORBA.Stub;

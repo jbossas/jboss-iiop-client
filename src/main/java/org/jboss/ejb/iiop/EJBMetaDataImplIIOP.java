@@ -20,9 +20,9 @@ package org.jboss.ejb.iiop;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 
-import javax.ejb.EJBHome;
-import javax.ejb.EJBMetaData;
-import javax.ejb.HomeHandle;
+import jakarta.ejb.EJBHome;
+import jakarta.ejb.EJBMetaData;
+import jakarta.ejb.HomeHandle;
 
 /**
  *The {@link EJBMetaData} implementation used in remote IIOP invocations.

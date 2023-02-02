@@ -22,9 +22,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.rmi.RemoteException;
 
-import javax.ejb.EJBHome;
-import javax.ejb.HomeHandle;
-import javax.ejb.spi.HandleDelegate;
+import jakarta.ejb.EJBHome;
+import jakarta.ejb.HomeHandle;
+import jakarta.ejb.spi.HandleDelegate;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.rmi.CORBA.Stub;
