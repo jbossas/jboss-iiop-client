@@ -73,7 +73,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.jboss.openjdk-orb</groupId>
+            <groupId>org.jboss</groupId>
             <artifactId>openjdk-orb</artifactId>
             <version>${version.org.jboss.openjdk-orb}</version>
         </dependency>
