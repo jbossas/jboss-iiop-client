@@ -34,8 +34,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Build and Test on ${{ matrix.java }}
-        run: mvn clean install
-      - uses: actions/upload-artifact@v2
+        run:  bash ${GITHUB_WORKSPACE}/.github/test.sh
         if: failure()
         with:
           name: surefire-reports-${{ matrix.os }}-${{ matrix.java }}

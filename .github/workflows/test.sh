@@ -1,0 +1,1 @@
+echo "THE SCRIPT IS RUNNING"
